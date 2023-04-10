@@ -36,8 +36,10 @@ namespace LibraryManagementSystem.services
                 userAccount = $"{userOld}{suffix}";
                 suffix++;
             }
+            DateTime currentDate = DateTime.Now;
             var createData = new Users()
             {
+
                 Name = createUser.Name,
                 username = userAccount,
                 password = createUser.password,
@@ -46,9 +48,9 @@ namespace LibraryManagementSystem.services
                 email = createUser.email,
                 access_level = createUser.access_level,
                 date_of_birth = createUser.date_of_birth,
-                date_created = createUser.date_created,
-                date_udate = createUser.date_udate,
-            };
+                date_created = currentDate,
+                date_update = currentDate,
+        };
             _context.Users.Add(createData);
             await _context.SaveChangesAsync();
 
@@ -62,8 +64,8 @@ namespace LibraryManagementSystem.services
                 email = createUser.email,
                 access_level = createUser.access_level,
                 date_of_birth = createUser.date_of_birth,
-                date_created = createUser.date_created,
-                date_udate = createUser.date_udate,
+                date_created = currentDate,
+                date_update = currentDate,
             };
 
             return data;
@@ -104,9 +106,10 @@ namespace LibraryManagementSystem.services
                 userAccount = $"{userOld}{suffix}";
                 suffix++;
             }
-
+            DateTime currentDate = DateTime.Now;
             var createData = new Users()
             {
+                user_id = putUser.user_id,
                 Name = putUser.Name,
                 username = userAccount,
                 address = putUser.address,
@@ -114,8 +117,8 @@ namespace LibraryManagementSystem.services
                 email = putUser.email,
                 access_level = putUser.access_level,
                 date_of_birth = putUser.date_of_birth,
-                date_created = putUser.date_created,
-                date_udate = putUser.date_udate,
+                date_update = currentDate,
+
             };
 
             _context.Entry(createData).State = EntityState.Modified;

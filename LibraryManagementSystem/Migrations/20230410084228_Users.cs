@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -22,8 +23,8 @@ namespace LibraryManagementSystem.Migrations
                     publication = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     quantity = table.Column<int>(type: "int", nullable: true),
                     type_book = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_created = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_udate = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    date_created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    date_update = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,8 +79,8 @@ namespace LibraryManagementSystem.Migrations
                     email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     access_level = table.Column<int>(type: "int", nullable: true),
                     date_of_birth = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_created = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_udate = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    date_created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    date_update = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -145,8 +146,8 @@ namespace LibraryManagementSystem.Migrations
                     borrowings_date = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     due_date = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     quantity = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_created = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_udate = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    date_created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    date_update = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -224,8 +225,8 @@ namespace LibraryManagementSystem.Migrations
                     returning_date = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     quantity = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     lost_book = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_created = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    date_udate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    date_created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    date_update = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Usersuser_id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

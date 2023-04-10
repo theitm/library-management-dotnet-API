@@ -17,8 +17,8 @@ namespace LibraryManagementSystem.models
         public string? returning_date { get; set; }
         public string? quantity { get; set; }
         public string? lost_book { get; set; }
-        public string? date_created { get; set; }
-        public string? date_udate { get; set; }
+        public DateTime date_created { get; set; }
+        public DateTime date_update { get; set; }
 
         public int Currentborrowings_id;
         public int Currentuser_id;

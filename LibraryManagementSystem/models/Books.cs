@@ -15,8 +15,8 @@ public class Books
     public string? publication { get; set; }
     public int? quantity { get; set; }
     public string? type_book { get; set; }
-    public string? date_created { get; set; }
-    public string? date_udate { get; set; }
+    public DateTime date_created { get; set; }
+    public DateTime date_update { get; set; }
     public ICollection<Borrowings>? Borrowings { get; set; }
     public IList<BooksEvaluation>? booksevaluation { get; set; }
     public IList<BooksUsers>? BooksUsers { get; set; }

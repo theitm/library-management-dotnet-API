@@ -61,6 +61,16 @@ namespace LibraryManagementSystem.Controllers
 
             return Ok(user);
         }
+        [HttpPut("/user/{id}")]
+        public async Task<ActionResult> PutUser(int id, [FromBody] PutUser putUser)
+        {
+            if (id != putUser.user_id)
+            {
+                return BadRequest();
+            }
+            await usersRepository.Update(putUser);
+            return NoContent();
+        }
 
     }
 }

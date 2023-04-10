@@ -7,10 +7,10 @@ namespace LibraryManagementSystem.services
     public interface IUsersRepository
     {
         Task<IEnumerable<Users>> Get();
-        Task<Users> GetById(int user_id);
+        Task<Users> GetById(int id);
         Task<UserDTO> Create(CreateUser createUser);
         Task Update(PutUser putuser);
-        Task Delete(int user_id);
+        Task Delete(int id);
 
     }
 

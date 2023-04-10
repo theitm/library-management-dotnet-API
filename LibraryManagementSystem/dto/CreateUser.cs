@@ -16,9 +16,9 @@ namespace LibraryManagementSystem.dto
             public int? access_level { get; set; }
             [RegularExpression("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$", ErrorMessage = "incorrectly entered")]
             public string? date_of_birth { get; set; }
-            [RegularExpression("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$", ErrorMessage = "incorrectly entered")]
-            public string? date_created { get; set; }
-            [RegularExpression("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$", ErrorMessage = "incorrectly entered")]
-            public string? date_udate { get; set; }
+            //[RegularExpression("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$", ErrorMessage = "incorrectly entered")]
+            public DateTime date_created { get; set; }
+            //[RegularExpression("^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\\d\\d$", ErrorMessage = "incorrectly entered")]
+            public DateTime date_update { get; set; }
         }
 }

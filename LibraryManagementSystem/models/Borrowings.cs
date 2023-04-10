@@ -15,8 +15,8 @@ namespace LibraryManagementSystem.models
         public string? borrowings_date { get; set; }
         public string? due_date { get; set; }
         public string? quantity { get; set; }
-        public string? date_created { get; set; }
-        public string? date_udate { get; set; }
+        public DateTime date_created { get; set; }
+        public DateTime date_update { get; set; }
         public Books? Books { get; set; }
         public Users? Users { get; set; }
         public ICollection<Returnings>? Returnings { get; set; }

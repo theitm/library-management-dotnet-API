@@ -2,7 +2,8 @@
 {
     public class PutUser
     {
-        
+        internal int id;
+
         public int user_id { get; set; }
         public string? Name { get; set; }
         public string? username { get; set; }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryManagementSystem.Migrations
 {
     [DbContext(typeof(LibraryManagementSystemDbContext))]
-    [Migration("20230407031312_Users")]
+    [Migration("20230410084228_Users")]
     partial class Users
     {
         /// <inheritdoc />
@@ -36,11 +36,11 @@ namespace LibraryManagementSystem.Migrations
                     b.Property<string>("author")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("date_created")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_created")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("date_udate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_update")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("publication")
                         .HasColumnType("nvarchar(max)");
@@ -109,11 +109,11 @@ namespace LibraryManagementSystem.Migrations
                     b.Property<string>("borrowings_date")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("date_created")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_created")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("date_udate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_update")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("due_date")
                         .HasColumnType("nvarchar(max)");
@@ -239,11 +239,11 @@ namespace LibraryManagementSystem.Migrations
                     b.Property<int>("borrowing_id")
                         .HasColumnType("int");
 
-                    b.Property<string>("date_created")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_created")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("date_udate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_update")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("lost_book")
                         .HasColumnType("nvarchar(max)");
@@ -283,14 +283,14 @@ namespace LibraryManagementSystem.Migrations
                     b.Property<string>("address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("date_created")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_created")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("date_of_birth")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("date_udate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("date_update")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("email")
                         .HasColumnType("nvarchar(max)");
