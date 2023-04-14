@@ -1,13 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
-using static LibraryManagementSystem.models.LibraryManagementSystem;
+using  LibraryManagementSystem.models;
+
 
 namespace LibraryManagementSystem.models
 {
-    public class LibraryManagementSystemDbContext : DbContext
+    public  class LibraryManagementSystemDbContext : DbContext
     {
         public LibraryManagementSystemDbContext(DbContextOptions options) : base(options)
-        { }
+        {
+            Database.EnsureCreated();
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -33,7 +36,7 @@ namespace LibraryManagementSystem.models
             modelBuilder.Entity<evaluationborrowings>().HasKey(sc => new { sc.evaluation_id, sc.borrowings_id });
         }
 
-        public DbSet<users> users { get; set; }
+       
         public DbSet<books> books { get; set; }
         public DbSet<evaluation> evaluations { get; set; }
         public DbSet<returnings> returnings { get; set; }
