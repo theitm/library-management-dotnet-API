@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using LibraryManagementSystem.Data;
 using LibraryManagementSystem.models;
 
 namespace LibraryManagementSystem.Controllers
@@ -12,9 +11,9 @@ namespace LibraryManagementSystem.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly LibraryManagementSystemContext _context;
+        private readonly LibraryManagementSystemDbContext _context;
 
-        public UsersController(LibraryManagementSystemContext context)
+        public UsersController(LibraryManagementSystemDbContext context)
         {
             _context = context;
         }
