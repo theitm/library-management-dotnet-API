@@ -15,8 +15,8 @@ namespace LibraryManagementSystem.models.Entity
         public int Borrowing_ID { get; set; }
         public string? Rate { get; set; }
         public string? Comment_rate { get; set; }
-        public TimeOnly Time_rate { get; set; }
-        public IList<BookEvaluation>? BooksEvaluations { get; set; }
-        public IList<EvaluationUser>? EvaluationUsers { get; set; }
+        public DateTime Time_rate { get; set; }
+        public Book Book { get; set; }
+        public User User { get; set; }
     }
 }

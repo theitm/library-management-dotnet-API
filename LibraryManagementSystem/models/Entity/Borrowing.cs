@@ -7,14 +7,16 @@ namespace LibraryManagementSystem.models.Entity
     {
         [Key]
         public int Borrowing_Id { get; set; }
-        [ForeignKey]
+        [ForeignKey("User_ID")]
         public int User_ID { get; set; }
         public string Borrowing_date { get; set; }
         public string Due_date { get; set; }
         public string Returning_date { get; set; }
-        public DateOnly Date_created { get; set; }
-        public DateOnly Date_updated { get;set; }
+        public DateTime Date_created { get; set; }
+        public DateTime Date_updated { get;set; }
         public Book Book { get; set; }
+        public User User { get; set; }
+        public BorrowingDetail BorrowingDetail { get; set; }
         public ICollection<BorrowingDetail> BorrowingDetails { get; set; }
     }
 }

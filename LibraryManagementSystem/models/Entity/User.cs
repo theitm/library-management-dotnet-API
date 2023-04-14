@@ -15,9 +15,9 @@ namespace LibraryManagementSystem.models.Entity
         public string? Email { get; set; }
         public string? Access_level { get; set; }
         public string? Date_of_birth { get; set; }
-        public DateOnly Date_created { get; set; }
-        public DateOnly Date_update { get; set; }
+        public DateTime Date_created { get; set; }
+        public DateTime Date_update { get; set; }
         public ICollection<Borrowing>? Borrowings { get; set; }
-        public IList<EvaluationUser>? EvaluationUsers { get; set; }
+        public ICollection<Evaluation>? Evaluations { get; set; }
     }
 }
