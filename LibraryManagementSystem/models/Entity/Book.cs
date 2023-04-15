@@ -16,6 +16,6 @@ namespace LibraryManagementSystem.models.Entity
         public DateTime Date_updated { get; set; }
         public TypeBook TypeBook { get; set; }
         public ICollection<Evaluation> Evaluations { get; set; }
-        public ICollection<Borrowing> Borrowings { get; set; }
+        public ICollection<BorrowingDetail> BorrowingDetail { get; set; }
     }
 }

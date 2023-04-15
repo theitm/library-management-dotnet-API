@@ -12,30 +12,30 @@ namespace LibraryManagementSystem.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Evaluation>()
-                .HasOne<Book>(s => s.Book)
-                .WithMany(g => g.Evaluations)
-                .HasForeignKey(s => s.Book_ID);
             modelBuilder.Entity<Borrowing>()
-                .HasOne<Book>(s => s.Book)
-                .WithMany(g => g.Borrowings)
-                .HasForeignKey(s => s.User_ID);
-            modelBuilder.Entity<Book>()
-                .HasOne<TypeBook>(s => s.TypeBook)
-                .WithMany(g => g.Books)
-                .HasForeignKey(s => s.Book_ID);
+           .HasOne<User>(s => s.User)
+           .WithMany(g => g.Borrowings)
+           .HasForeignKey(s => s.User_ID);
+
+            modelBuilder.Entity<Evaluation>()
+           .HasOne<User>(s => s.User)
+           .WithMany(g => g.Evaluations)
+           .HasForeignKey(s => s.User_ID);
+
+            modelBuilder.Entity<Evaluation>()
+           .HasOne<Book>(s => s.Book)
+           .WithMany(g => g.Evaluations)
+           .HasForeignKey(s => s.Book_ID);
+
             modelBuilder.Entity<BorrowingDetail>()
-                .HasOne<Borrowing>(s => s.Borrowing)
-                .WithMany(g => g.BorrowingDetails)
-                .HasForeignKey(s => s.Borrowing_ID);
-            modelBuilder.Entity<Borrowing>()
-                .HasOne<User>(s => s.User)
-                .WithMany(g => g.Borrowings)
-                .HasForeignKey(s => s.User_ID);
-            modelBuilder.Entity<Evaluation>()
-                .HasOne<User>(s => s.User)
-                .WithMany(g => g.Evaluations)
-                .HasForeignKey(s => s.User_ID);
+           .HasOne<Borrowing>(s => s.Borrowing)
+           .WithMany(g => g.BorrowingDetails)
+           .HasForeignKey(s => s.Borrowing_ID);
+
+           modelBuilder.Entity<BorrowingDetail>()
+          .HasOne<Book>(s => s.Book)
+          .WithMany(g => g.BorrowingDetail)
+          .HasForeignKey(s => s.Book_ID);
         }
 
         public DbSet<Book> Book { get; set; }

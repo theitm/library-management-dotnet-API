@@ -17,7 +17,7 @@ namespace LibraryManagementSystem.models.Entity
         public string? Date_of_birth { get; set; }
         public DateTime Date_created { get; set; }
         public DateTime Date_update { get; set; }
-        public ICollection<Borrowing>? Borrowings { get; set; }
-        public ICollection<Evaluation>? Evaluations { get; set; }
+        public ICollection<Borrowing> Borrowings { get; set; }
+        public ICollection<Evaluation> Evaluations { get; set; }
     }
 }

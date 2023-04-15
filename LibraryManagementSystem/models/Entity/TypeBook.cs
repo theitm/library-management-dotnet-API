@@ -7,8 +7,6 @@ namespace LibraryManagementSystem.models.Entity
     {
         [Key]
         public int Type_ID { get; set; }
-        [ForeignKey("Book_ID")]
-        public int Book_ID { get; set; }
         public string Type { get; set; }
         public DateTime Date_created { get; set; }
         public DateTime Date_updated { get; set; }
