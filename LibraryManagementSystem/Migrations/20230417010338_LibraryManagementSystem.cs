@@ -77,15 +77,14 @@ namespace LibraryManagementSystem.Migrations
                     Publication_date = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date_created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Date_updated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TypeBookType_ID = table.Column<int>(type: "int", nullable: false)
+                    Date_updated = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Book", x => x.Book_ID);
                     table.ForeignKey(
-                        name: "FK_Book_TypeBook_TypeBookType_ID",
-                        column: x => x.TypeBookType_ID,
+                        name: "FK_Book_TypeBook_Type_ID",
+                        column: x => x.Type_ID,
                         principalTable: "TypeBook",
                         principalColumn: "Type_ID",
                         onDelete: ReferentialAction.Cascade);
@@ -173,9 +172,9 @@ namespace LibraryManagementSystem.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Book_TypeBookType_ID",
+                name: "IX_Book_Type_ID",
                 table: "Book",
-                column: "TypeBookType_ID");
+                column: "Type_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Borrowing_User_ID",

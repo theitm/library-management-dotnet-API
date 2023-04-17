@@ -56,15 +56,12 @@ namespace LibraryManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TypeBookType_ID")
-                        .HasColumnType("int");
-
                     b.Property<int>("Type_ID")
                         .HasColumnType("int");
 
                     b.HasKey("Book_ID");
 
-                    b.HasIndex("TypeBookType_ID");
+                    b.HasIndex("Type_ID");
 
                     b.ToTable("Book");
                 });
@@ -262,7 +259,7 @@ namespace LibraryManagementSystem.Migrations
                 {
                     b.HasOne("LibraryManagementSystem.models.Entity.TypeBook", "TypeBook")
                         .WithMany("Books")
-                        .HasForeignKey("TypeBookType_ID")
+                        .HasForeignKey("Type_ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

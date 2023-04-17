@@ -32,10 +32,15 @@ namespace LibraryManagementSystem.Context
            .WithMany(g => g.BorrowingDetails)
            .HasForeignKey(s => s.Borrowing_ID);
 
-           modelBuilder.Entity<BorrowingDetail>()
-          .HasOne<Book>(s => s.Book)
-          .WithMany(g => g.BorrowingDetail)
-          .HasForeignKey(s => s.Book_ID);
+            modelBuilder.Entity<BorrowingDetail>()
+           .HasOne<Book>(s => s.Book)
+           .WithMany(g => g.BorrowingDetail)
+           .HasForeignKey(s => s.Book_ID);
+
+            modelBuilder.Entity<Book>()
+           .HasOne<TypeBook>(s => s.TypeBook)
+           .WithMany(g => g.Books)
+           .HasForeignKey(s => s.Type_ID);
         }
 
         public DbSet<Book> Book { get; set; }
