@@ -22,17 +22,11 @@ namespace LibraryManagementSystem.Controller
             this.bookRepository = bookRepository;
         }
 
-
-
-
-
         [HttpGet]
         public async Task<List<Book>> GetAllUser()
         {
             return await bookRepository.Get();
         }
-
-
         [HttpPost]
         public async Task<ActionResult> PostBook([FromBody] BookDTO books)
         {
@@ -42,13 +36,9 @@ namespace LibraryManagementSystem.Controller
         [HttpPut("update")]
         public async Task<ActionResult> PutBook(int id, [FromBody] PutBook books)
         {
-            //if (id != books.book_id)
-            //{
-            //    return BadRequest();
-            //}
+           
             var res = await bookRepository.EditBook(id, books);
             if (res == null) return BadRequest("Book is not exist");
-            //return Ok("successfully");
             return Ok(res);
         }
         [HttpDelete("{id}")]
@@ -63,7 +53,6 @@ namespace LibraryManagementSystem.Controller
                 }
                 catch (Exception ex)
                 {
-                    // Log the error message and return an appropriate response
                     return StatusCode(500, $"lỗi khi xóa người dùng: {ex.Message}");
 
                 }

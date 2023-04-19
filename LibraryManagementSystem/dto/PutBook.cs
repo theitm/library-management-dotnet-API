@@ -11,6 +11,5 @@
         public string Quantity { get; set; }
         public DateTime Date_created { get; set; }
         public DateTime Date_updated { get; set; }
-
     }
 }

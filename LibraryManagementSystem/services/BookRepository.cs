@@ -20,8 +20,6 @@ namespace LibraryManagementSystem.services
         {
             return await _context.Book.ToListAsync();
         }
-
-
         public async Task<BookDTO> CreateBook(BookDTO books)
         {
             var addBook = new Book()
@@ -34,15 +32,12 @@ namespace LibraryManagementSystem.services
                 Type_ID = books.Type_ID,
                 Date_created = books.Date_created,
                 Date_updated = books.Date_updated,
-
-
             };
 
             _context.Book.Add(addBook);
             await _context.SaveChangesAsync();
 
-            return books;
-
+           return books;
         }
         public async Task<object> EditBook(int id, PutBook books)
         {
@@ -57,9 +52,6 @@ namespace LibraryManagementSystem.services
             editBook.Type_ID = books.Type_ID;
             editBook.Date_created = books.Date_created;
             editBook.Date_updated = books.Date_updated;
-
-
-
             await _context.SaveChangesAsync();
             return books;
         }
