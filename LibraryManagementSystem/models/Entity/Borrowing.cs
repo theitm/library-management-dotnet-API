@@ -7,6 +7,7 @@ namespace LibraryManagementSystem.models.Entity
     {
         [Key]
         public int Borrowing_ID { get; set; }
+        [ForeignKey("User_ID")]
         public int User_ID { get; set; }
         public string Borrowing_date { get; set; }
         public string Due_date { get; set; }

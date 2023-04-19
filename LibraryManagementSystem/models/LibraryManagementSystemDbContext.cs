@@ -9,6 +9,7 @@ namespace LibraryManagementSystem.Context
     {
         public LibraryManagementSystemDbContext(DbContextOptions options) : base(options)
         {
+            Database.EnsureCreated();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
