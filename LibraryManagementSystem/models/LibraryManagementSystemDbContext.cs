@@ -7,6 +7,8 @@ namespace LibraryManagementSystem.Context
 {
     public class LibraryManagementSystemDbContext : DbContext
     {
+        internal object books;
+
         public LibraryManagementSystemDbContext(DbContextOptions options) : base(options)
         {
         }
