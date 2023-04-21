@@ -14,6 +14,8 @@ builder.Services.AddScoped<IBorrowingRepository, BorrowingRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddScoped<IAccountUserRepository, AccountUserRepository>();
+builder.Services.AddScoped<ITypeBookRepository, TypeBookRepository>();
 //Conect database
 builder.Services.AddDbContext<LibraryManagementSystemDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Sqlserver")));
 var app = builder.Build();
