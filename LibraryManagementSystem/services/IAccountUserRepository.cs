@@ -5,7 +5,7 @@ using static LibraryManagementSystem.models.Entity.User;
 
 namespace LibraryManagementSystem.services
 {
-    public interface IUserRepository
+    public interface IAccountUserRepository
     {
         Task<IEnumerable<User>> Get();
         Task<User> GetById(int id);

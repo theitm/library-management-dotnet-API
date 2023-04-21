@@ -9,11 +9,11 @@ using LibraryManagementSystem.models.Entity;
 
 namespace LibraryManagementSystem.services
 {
-    public class UserRepository : IUserRepository
+    public class AccountUserRepository : IAccountUserRepository
     {
         private readonly LibraryManagementSystemDbContext _context;
 
-        public UserRepository(LibraryManagementSystemDbContext context)
+        public AccountUserRepository(LibraryManagementSystemDbContext context)
         {
             _context = context;
         }
@@ -46,7 +46,7 @@ namespace LibraryManagementSystem.services
                 Address = createUser.Address,
                 Phone_number = createUser.Phone_number,
                 Email = createUser.Email,
-                Access_level = (string)createUser.Access_level,
+                Access_level = createUser.Access_level,
                 Date_of_birth = createUser.Date_of_birth,
                 Date_created = currentDate,
                 Date_update = currentDate,
@@ -61,7 +61,7 @@ namespace LibraryManagementSystem.services
                 Address = createUser.Address,
                 Phone_number = createUser.Phone_number,
                 Email = createUser.Email,
-                Access_level = (string)createUser.Access_level,
+                Access_level = createUser.Access_level,
                 Date_of_birth = createUser.Date_of_birth,
                 Date_created = currentDate,
                 Date_update = currentDate,
@@ -112,7 +112,7 @@ namespace LibraryManagementSystem.services
                 Address = putUser.Address,
                 Phone_number = putUser.Phone_number,
                 Email = putUser.Email,
-                Access_level = (string)putUser.Access_level,
+                Access_level = putUser.Access_level,
                 Date_of_birth = putUser.Date_of_birth,
                 Date_update = currentDate,
             };

@@ -12,7 +12,7 @@ builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAccountUserRepository, AccountUserRepository>();
 builder.Services.AddScoped<ITypeBookRepository, TypeBookRepository>();
 //Conect database
 builder.Services.AddDbContext<LibraryManagementSystemDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Sqlserver")));
